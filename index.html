@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit de Grafismo Fonético - Alfabetização Acelerada</title>
+    
+    <!-- Google Fonts: Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://i.imgur.com">
+    <link rel="preconnect" href="https://fast.wistia.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '872832001849235');
+    fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        :root {
+            /* Cores Principais */
+            --bg-body: #FFF9E8; /* Bege Claro (Restante da página) */
+            --bg-top: #FDFFF7;  /* Verde/Branco Muito Claro (Topo) */
+            --bg-mid: #FFF7CF;  /* Amarelo Creme (Nova Seção) */
+            
+            --text-dark: #2D2D2D;
+            --text-gray: #555555;
+            --accent-gold: #C9A227;
+            --accent-gold-light: #FFF2CC;
+            --accent-red: #E74C3C;
+            --accent-blue: #3498DB;
+            
+            /* CTA */
+            --cta-green: #27C948;
+            --cta-shadow: #1e9e36;
+            
+            /* Pastéis */
+            --pastel-green: #BFE9C3;
+            --pastel-blue: #E6F0FF;
+            --pastel-pink: #FFE6E6;
+            --pastel-pink-border: #F5C6CB;
+            
+            /* Layout */
+            --max-width: 480px;
+            --radius-box: 12px;
+            --radius-btn: 50px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* FORÇANDO NUNITO EM TUDO */
+        body, button, input, textarea, select, h1, h2, h3, h4, p, span, div, li, a {
+            font-family: 'Nunito', sans-serif !important;
+        }
+
+        body {
+            background-color: #f0f0f0; /* Fundo fora do container */
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Container Mobile Centralizado */
+        .page-container {
+            max-width: var(--max-width);
+            background-color: var(--bg-body);
+            margin: 0 auto;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            overflow-x: hidden;
+        }
+
+        /* Tipografia */
+        h1, h2, h3, h4 {
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .font-bold { font-weight: 700; }
+        .text-red { color: var(--accent-red); }
+        .text-gold { color: var(--accent-gold); }
+        .uppercase { text-transform: uppercase; }
+
+        /* Utilitários Visuais */
+        .highlight {
+            background-color: var(--accent-gold-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block; /* Quebra bonita */
+        }
+
+        .highlight-green-pill {
+            background-color: #E8F5E9;
+            color: var(--cta-green);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-weight: 800;
+            border: 1px solid #C8E6C9;
+        }
+
+        .marker-pen {
+            background-color: #FFF7CF;
+            color: #8F6E1A;
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline;
+            -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
+        }
+
+        .marker-pen-alert {
+            background-color: #ffeb3b;
+            color: #000;
+            padding: 0 5px;
+            font-weight: 800;
+            box-decoration-break: clone;
+        }
+        
+        /* Nova Seta Tracejada */
+        .dashed-arrow-svg {
+            width: 24px;
+            height: 60px;
+            margin: 10px auto 0 auto;
+            display: block;
+            overflow: visible;
+        }
+        .dashed-path {
+            fill: none;
+            stroke: var(--text-dark); /* Cor escura elegante */
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 6, 6; /* Define o tracejado */
+            opacity: 0.7;
+        }
+        .arrow-head {
+            fill: none;
+            stroke: var(--text-dark);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.7;
+        }
+
+        /* Novos Cards Elegantes de Dor */
+        .pain-card-elegant {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.08); /* Sombra avermelhada muito suave */
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #FFF0F0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pain-card-elegant::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--accent-red);
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+
+        .pain-card-elegant:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.12);
+        }
+
+        .pain-icon-wrapper {
+            width: 42px;
+            height: 42px;
+            background: #FFF5F5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+            color: var(--accent-red);
+        }
+
+        .pain-text-elegant {
+            font-weight: 800; /* Negrito Forte */
+            color: var(--text-dark);
+            text-align: left;
+            font-size: 15px;
+            line-height: 1.3;
+        }
+
+        /* Novos Cards do Hero */
+        .hero-benefit-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.02);
+            text-align: left;
+            transition: transform 0.2s;
+        }
+        
+        .hero-check-icon {
+            min-width: 24px;
+            width: 24px;
+            height: 24px;
+            background-color: var(--cta-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            flex-shrink: 0;
+            box-shadow: 0 2px 4px rgba(39, 201, 72, 0.3);
+        }
+
+        .hero-benefit-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .box-white {
+            background-color: #fff;
+            border-radius: var(--radius-box);
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Alerta Redesenhado - Top */
+        .icon-3d {
+            font-size: 80px; /* Bem maior */
+            display: block;
+            margin: 0 auto 20px auto; /* Centralizado */
+            text-align: center;
+            /* Sombra dourada para brilho e profundidade */
+            filter: drop-shadow(0 10px 10px rgba(212, 160, 23, 0.4)); 
+            /* Animação flutuando */
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .alert-card-pro {
+            background: #fff;
+            border: 4px dotted #F0D065; /* Pontilhado bonito */
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        /* Componentes */
+        .btn-cta {
+            display: block;
+            width: 100%;
+            background-color: var(--cta-green);
+            color: white;
+            font-weight: 800;
+            text-align: center;
+            padding: 16px 20px;
+            border-radius: var(--radius-btn);
+            font-size: 18px;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 4px 0 var(--cta-shadow);
+            transition: transform 0.1s;
+            cursor: pointer;
+            border: none;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+
+        .btn-cta:active {
+            transform: translateY(4px);
+            box-shadow: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+        .check-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .check-list li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        img.responsive {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        /* SEÇÕES ESPECÍFICAS */
+
+        /* Hero */
+        .section-hero {
+            background-color: var(--bg-top); /* NOVO FUNDO */
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .section-hero h1 {
+            font-size: 26px;
+            color: var(--text-dark);
+            margin-top: 15px;
+            font-weight: 500; /* Leve por padrão no h1 */
+        }
+        .section-hero .subheadline {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-top: 25px;    /* Aumentado */
+            margin-bottom: 30px; /* Aumentado e equilibrado */
+        }
+
+        /* Intro */
+        .section-intro {
+            background-color: var(--bg-top); /* NOVO FUNDO */
+            padding: 20px 20px 40px 20px; /* Mais padding bottom para a seta */
+            text-align: center;
+            border-bottom-left-radius: 30px; /* Curva suave de transição */
+            border-bottom-right-radius: 30px;
+            margin-bottom: -20px; /* Puxa o próximo conteúdo um pouco pra cima */
+            position: relative;
+            z-index: 2; /* Acima do fundo seguinte */
+        }
+
+        /* Dor */
+        .section-pain {
+            padding: 50px 20px 20px 20px; /* Padding extra no topo para compensar a margem negativa */
+            position: relative;
+            z-index: 1;
+        }
+        .pain-title {
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        /* Nova Classe de Fundo */
+        .bg-pale-yellow {
+            background-color: var(--bg-mid);
+        }
+
+        /* Alerta */
+        .section-alert {
+            padding: 40px 20px 20px 20px;
+        }
+        
+        /* Novas Classes para Features (Cards e Imagem) */
+        .single-vertical-img {
+            width: 100%;
+            max-width: 280px; /* Limita um pouco para não ficar gigante */
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        .feature-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .feature-card-item {
+            background: #fff;
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-card-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .feature-icon-circle {
+            min-width: 36px;
+            height: 36px;
+            background-color: #E8F5E9;
+            color: var(--cta-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 800;
+            flex-shrink: 0;
+            border: 1px solid #C8E6C9;
+        }
+
+        .feature-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        /* Por que funciona */
+        .color-divider {
+            height: 6px;
+            background: linear-gradient(to right, #FF5F5F 25%, #FFD93D 25% 50%, #4CD964 50% 75%, #5AC8FA 75%);
+            border-radius: 3px;
+            margin: 20px auto;
+            width: 80%;
+        }
+        .card-blue { background-color: var(--pastel-blue); padding: 20px; border-radius: var(--radius-box); margin-bottom: 20px; }
+        .card-green { background-color: var(--pastel-green); padding: 20px; border-radius: var(--radius-box); margin-bottom: 20px; }
+
+        /* Lista Verde - Card Style */
+        .green-card-container {
+            background-color: #B7E9B0; /* Cor de fundo solicitada */
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 15px 30px rgba(45, 131, 54, 0.1);
+        }
+
+        .green-list-card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            color: #2D2D2D;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .green-list-card:hover {
+            transform: translateX(3px);
+        }
+
+        .elegant-cta-text {
+            font-family: 'Nunito', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: #145A32;
+            background: rgba(255,255,255,0.6);
+            padding: 20px;
+            border-radius: 16px;
+            border: 2px dashed #145A32;
+            display: block;
+            margin-top: 25px;
+            box-shadow: 0 5px 15px rgba(20, 90, 50, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* NOVA SEÇÃO APRENDIZADO (Section 10) */
+        .section-learn {
+            background-color: #fefcf5;
+            padding: 40px 20px;
+        }
+
+        .learn-title-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .learn-title {
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2D4883 0%, #C9A227 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-bottom: 10px;
+            animation: pulseTitle 3s infinite ease-in-out;
+            line-height: 1.3;
+        }
+
+        @keyframes pulseTitle {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Cards Estilo Print */
+        .learn-card-print {
+            background-color: #fff;
+            border: 2px dashed #C9A227; /* Borda Tracejada Dourada */
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(201, 162, 39, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .learn-card-print:hover {
+            transform: translateY(-5px);
+        }
+
+        .learn-card-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+
+        .learn-card-h4 {
+            font-size: 18px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 10px;
+        }
+        
+        .learn-card-p {
+            font-size: 15px;
+            color: #000;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* CTA Intermediário */
+        .mini-ribbon {
+            background-color: #8D6E63; /* Marrom */
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        /* Vídeo */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 177.77%; /* 9:16 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background-color: #000;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin: 20px 0;
+        }
+        .video-placeholder {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://picsum.photos/480/854?grayscale') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .play-btn {
+            width: 70px;
+            height: 70px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--cta-green);
+            box-shadow: 0 0 0 10px rgba(255,255,255,0.3);
+            transition: all 0.3s;
+        }
+        .play-btn:hover { transform: scale(1.1); }
+        
+        /* Título elegante do vídeo */
+        .video-title-elegant {
+            font-size: 22px;
+            font-weight: 900;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, #d4a017 0%, #333 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        /* Beneficios Numerados (Redesign) */
+        .benefit-card {
+            border: 2px dashed #9E7F28; /* Cor Dourado/Marrom do print */
+            background: white;
+            border-radius: 35px; /* Bem arredondado */
+            padding: 40px 30px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .benefit-number {
+            font-family: 'Nunito', sans-serif;
+            color: #9E7F28; /* Mesma cor da borda */
+            font-size: 90px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .benefit-card h4 {
+            font-size: 22px;
+            color: #1A1A1A;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        .benefit-card p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Depoimentos */
+        .testimonial-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 14px;
+        }
+        
+        .title-elegant-gradient {
+            background: -webkit-linear-gradient(45deg, #145A32, #27C948);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 26px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: block;
+        }
+        
+        .fb-header { display: flex; align-items: center; margin-bottom: 10px; }
+        .fb-avatar { width: 40px; height: 40px; background: #ddd; border-radius: 50%; margin-right: 10px; }
+        .fb-name { font-weight: 700; color: #1c1e21; font-size: 15px; display: block; line-height: 1.2; }
+        .fb-meta { font-size: 12px; color: #90949c; }
+        .fb-actions { 
+            display: flex; 
+            gap: 15px; 
+            margin-top: 10px; 
+            color: #65676b; 
+            font-size: 12px; 
+            font-weight: 600; 
+            border-top: 1px solid #eee;
+            padding-top: 8px;
+        }
+        .fb-reactions { display: flex; align-items: center; gap: 5px; font-weight: 400; margin-left: auto; color: #65676b;}
+
+        /* Seção Marrom (Updated) */
+        .section-brown-gold {
+            background-color: #947923; /* Cor Dourado/Mostarda do print */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .brown-gold-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 10px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .carousel-track {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+        }
+        
+        .carousel-track::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .carousel-track img {
+            width: 100%;
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        /* Buttons Stack (from print) */
+        .kit-btn-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .kit-btn-item {
+            width: 100%;
+            padding: 14px 10px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 900;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 1.2;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .kb-green { background-color: #5EDC6E; }
+        .kb-orange { background-color: #FF9D00; }
+        .kb-blue { background-color: #2196F3; }
+        .kb-red { background-color: #C62828; }
+        .kb-yellow { background-color: #FFC107; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+
+        /* Simples de usar */
+        .step-card {
+            background: #E6E6E6; /* Alterado de white para #E6E6E6 */
+            border-radius: var(--radius-box);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .step-icon { font-size: 40px; margin-bottom: 10px; display: block; }
+        .step-img {
+            width: 80px;
+            height: auto;
+            margin: 0 auto 15px auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* Bônus Styles - Updated to match print */
+        .bonus-ribbon-header {
+            background-color: #947923; /* Same gold/brown as section-brown-gold */
+            color: #fff;
+            padding: 35px 20px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 26px;
+            text-transform: uppercase;
+            line-height: 1.1;
+            /* No bottom margin, connects directly to gray area */
+        }
+        
+        .bonus-section-body {
+            background-color: #f0f0f0;
+            padding: 30px 20px;
+        }
+
+        .bonus-title-block {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 20px;
+            font-weight: 900;
+            color: #333;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+        
+        .highlight-bonus-yellow {
+            background-color: #FFF9C4; /* Pale yellow highlight */
+            color: #8D6E1C; /* Darker gold text */
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        /* New Bonus Cards Design */
+        .bonus-card-new {
+            background-color: #FFFFFF; /* Explicit white background */
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            /* Looks clean, no border in print, just shadow */
+        }
+
+        .bonus-card-img-new {
+            height: 220px; /* Fixed height for consistency */
+            width: auto;
+            max-width: 90%;
+            margin: 0 auto 20px auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .bonus-card-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .bonus-card-desc {
+            font-size: 15px; /* Increased from 13px */
+            color: #000; /* Changed from #555 */
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .bonus-price-strike {
+            color: #E74C3C;
+            text-decoration: line-through;
+            font-weight: 700;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .bonus-tag-free {
+            display: inline-block;
+            background-color: #FFFDE7;
+            border: 1px solid #FFF59D;
+            color: #FBC02D;
+            font-weight: 800;
+            font-size: 14px;
+            padding: 5px 15px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        
+        /* Grid for Cards if needed, but print shows vertical stack on mobile usually */
+        .bonus-grid-new {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+
+        .price-strike { text-decoration: line-through; color: var(--accent-red); font-size: 12px; }
+        .price-free { color: var(--accent-gold); font-weight: 800; font-size: 14px; }
+
+        /* RECAP E PREÇO - ESTILOS ELEGANTES */
+        .section-recap {
+            padding: 40px 20px;
+            background: #f9f9f9; /* Contraste leve */
+        }
+
+        .recap-headline {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 20px;
+            line-height: 1.4;
+            color: #333;
+        }
+
+        .marker-strong {
+            background: linear-gradient(120deg, #ffe082 0%, #ffca28 100%);
+            padding: 4px 10px;
+            border-radius: 6px;
+            color: #4e342e;
+            font-weight: 900;
+            box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+            display: inline-block;
+            transform: rotate(-1deg);
+        }
+
+        .offer-card {
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03);
+            padding: 0; 
+            overflow: hidden;
+            position: relative;
+        }
+
+        .offer-card-header {
+            background: #27C948; /* Cor da marca */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .offer-list-container {
+            padding: 25px 20px;
+        }
+
+        .offer-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.3;
+            color: #444;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 10px;
+        }
+
+        .offer-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        /* Check 3D Elegante */
+        .icon-check-3d {
+            min-width: 24px;
+            height: 24px;
+            background: #27C948;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            margin-right: 12px;
+            box-shadow: 0 4px 6px rgba(39, 201, 72, 0.4), inset 0 -2px 5px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+
+        .price-block-container {
+            background: #fdfdfd;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 2px dashed #e0e0e0;
+        }
+
+        .price-total-strike {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .price-strike-red {
+            text-decoration: line-through;
+            color: #E74C3C;
+            font-weight: 700;
+        }
+
+        .price-access-deal {
+            font-size: 18px;
+            color: #2D2D2D;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .price-final-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        .price-from {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        .price-now-huge {
+            font-size: 52px;
+            font-weight: 900;
+            color: #27C948;
+            line-height: 1;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 4px rgba(39, 201, 72, 0.1);
+        }
+
+        .price-installments-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #555;
+            margin-top: 5px;
+            background: none;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        .elegant-text-simple {
+            display: block;
+            color: #C9A227;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+
+        .security-img-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .security-img-container img {
+            max-width: 250px; /* Tamanho controlado conforme solicitado */
+            width: 100%;
+            height: auto;
+            opacity: 0.9;
+        }
+
+        /* Garantia Atualizada */
+        .warranty-card-premium {
+            background: #fff;
+            border-radius: 24px;
+            padding: 30px 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.03);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        /* Faixa Dourada Superior */
+        .warranty-card-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #C9A227, #F0D065, #C9A227);
+        }
+
+        .lock-icon-container {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px auto;
+            position: relative;
+            animation: floatLock 4s ease-in-out infinite;
+        }
+
+        @keyframes floatLock {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .warranty-headline {
+            font-size: 22px;
+            font-weight: 900;
+            color: #2D2D2D;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .warranty-text {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+        .faq-question {
+            padding: 15px;
+            background: #f9f9f9;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question::after { content: '+'; font-size: 20px; }
+        .faq-item.active .faq-question::after { content: '-'; }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 15px;
+            transition: all 0.3s ease;
+            background: #fff;
+            color: #555;
+            font-size: 14px;
+        }
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 200px; /* altura aproximada */
+        }
+
+        /* Footer */
+        footer {
+            background: #EC407A; /* Alterado para Rosa */
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+        footer a { color: #fff; text-decoration: none; margin: 0 10px; }
+
+        /* Seção Quem Sou Eu */
+        .section-about {
+            padding: 40px 20px;
+            background-color: var(--bg-body);
+            text-align: center;
+        }
+
+        .about-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .about-image-container {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* 1080x1080px ratio */
+            background-color: #eee;
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-content {
+            padding: 30px 25px;
+            text-align: left;
+        }
+
+        .about-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .about-text strong {
+            color: var(--text-dark);
+        }
+    </style>
+
+</head>
+<body>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=872832001849235&ev=PageView&noscript=1"
+    /></noscript>
+
+<div class="page-container">
+
+    <!-- 1. Hero Section -->
+    <section class="section-hero">
+        <img src="https://i.imgur.com/Drz3fcX.png" alt="Mockup Kit Grafismo" class="responsive" style="margin-bottom: 20px;" fetchpriority="high">
+        
+        <h1>
+            Descubra a <span class="marker-pen">técnica americana que ensina as crianças a ler</span> até 
+            <span style="font-weight: 800;">5 vezes mais rápido</span>, sem pressão!
+        </h1>
+        
+        <p class="subheadline">Com apenas <span class="highlight-green-pill">10 minutos</span> por dia.</p>
+        
+        <!-- Cards Elegantes -->
+        <div style="margin: 20px 0;">
+            <div class="hero-benefit-card">
+                <div class="hero-check-icon">✔</div>
+                <span class="hero-benefit-text">Ideal para crianças de 2 a 12 anos, no ritmo natural de cada uma</span>
+            </div>
+
+            <div class="hero-benefit-card">
+                <div class="hero-check-icon">✔</div>
+                <span class="hero-benefit-text">Mesmo que ainda não reconheça letras ou sons</span>
+            </div>
+
+            <div class="hero-benefit-card">
+                <div class="hero-check-icon">✔</div>
+                <span class="hero-benefit-text">Funciona também com crianças com TDAH, Autismo ou dificuldades de foco</span>
+            </div>
+        </div>
+
+        <a href="https://ggcheckout.com.br/checkout/v2/4k5Ft7HA4PfDROFpaRwj" class="btn-cta">Quero meu pequeno lendo rápido!</a>
+    </section>
+
+    <!-- 2. Introdução -->
+    <section class="section-intro">
+        <p>Com o <strong>Kit de Grafismo Fonético</strong>, baseado no <strong>método americano</strong> de alfabetização, seu filho aprende a ler até <strong>5x mais rápido</strong> — de forma divertida, simples e eficaz, direto de casa!</p>
+        
+        <!-- Seta Tracejada SVG -->
+        <svg class="dashed-arrow-svg" viewBox="0 0 24 60">
+            <path class="dashed-path" d="M12,0 L12,50" />
+            <path class="arrow-head" d="M2,40 L12,55 L22,40" />
+        </svg>
+    </section>
+
+    <!-- 3. Dor (Pain) -->
+    <section class="section-pain">
+        <h3 class="pain-title">Muitos pais acham que <span class="marker-pen">“cada criança tem seu tempo pra ler”</span>. Até que…</h3>
+        
+        <div class="pain-card-elegant">
+            <div class="pain-icon-wrapper">👎🏻</div>
+            <div class="pain-text-elegant">As tarefas de leitura viram um sofrimento</div>
+        </div>
+        
+        <div class="pain-card-elegant">
+            <div class="pain-icon-wrapper">👎🏻</div>
+            <div class="pain-text-elegant">As notas baixas</div>
+        </div>
+
+        <div class="pain-card-elegant">
+            <div class="pain-icon-wrapper">👎🏻</div>
+            <div class="pain-text-elegant">Ela se sente “menos inteligente” do que os coleguinhas</div>
+        </div>
+        
+        <p class="text-center font-bold" style="margin-top: 30px; font-size: 18px; color: #000;">
+            <span class="marker-pen">E o pior:</span> Começa a achar que não é capaz, sem entender o porquê..
+        </p>
+    </section>
+
+    <!-- 4. Alerta (COMEÇA O FUNDO AMARELO PÁLIDO) -->
+    <section class="section-alert bg-pale-yellow">
+        <!-- Ícone 3D fora do card, Centralizado e Animado -->
+        <span class="icon-3d">⚠️</span>
+        
+        <!-- Card Elegante de Alerta -->
+        <div class="alert-card-pro">
+            <p style="font-size: 16px; line-height: 1.5; text-align: left;">
+                <span style="font-size: 18px; font-weight: 800; display: block; margin-bottom: 10px;">Entenda o que realmente <span class="marker-pen-alert">atrasa a leitura do seu filho...</span></span>
+                falta de estímulo fonético na fase certa, o que pode tornar o processo de alfabetização mais lento, frustrante e confuso — tanto para a criança quanto para você.
+            </p>
+        </div>
+
+        <!-- Texto Calmante fora do card -->
+        <p class="text-center" style="margin-top: 25px;">Mas calma, você não tem culpa disso... É que ninguém te ensinou como ajudar seu filho a despertar a leitura de forma leve, divertida e no tempo certo.</p>
+
+        <!-- Seta Tracejada SVG (Substituindo Emoji) -->
+        <svg class="dashed-arrow-svg" viewBox="0 0 24 60">
+            <path class="dashed-path" d="M12,0 L12,50" />
+            <path class="arrow-head" d="M2,40 L12,55 L22,40" />
+        </svg>
+    </section>
+
+    <!-- 5. Mockup (Fundo Amarelo Pálido Continua) -->
+    <section class="text-center bg-pale-yellow" style="padding: 0 20px 20px 20px;">
+        <h2 style="margin-bottom: 20px;">Por isso você precisa do Kit...</h2>
+        <img src="https://i.imgur.com/OphZZJl.png" alt="Kit Aberto" class="responsive" loading="lazy" decoding="async">
+    </section>
+
+    <!-- 6. Features (Fundo Amarelo Pálido Termina Aqui) -->
+    <section class="bg-pale-yellow" style="padding: 20px 20px 40px 20px;">
+        
+        <!-- Imagem Única 9:16 -->
+        <img src="https://i.imgur.com/WhYnMm6.png" alt="Exemplo Atividade" class="single-vertical-img" loading="lazy" decoding="async">
+
+        <!-- Título -->
+        <h3 class="text-center" style="margin-top: 25px;">Cada atividade do Kit de Grafismo Fonético foi cuidadosamente criada para:</h3>
+
+        <!-- Checklist Elegante (Cards) -->
+        <div class="feature-cards-container">
+            
+            <div class="feature-card-item">
+                <div class="feature-icon-circle">✔</div>
+                <div class="feature-text">Desenvolver a coordenação motora fina</div>
+            </div>
+
+            <div class="feature-card-item">
+                <div class="feature-icon-circle">✔</div>
+                <div class="feature-text">Estimular a criatividade e a atenção da criança</div>
+            </div>
+
+            <div class="feature-card-item">
+                <div class="feature-icon-circle">✔</div>
+                <div class="feature-text">Fortalecer as conexões cerebrais que facilitam a leitura</div>
+            </div>
+
+            <div class="feature-card-item">
+                <div class="feature-icon-circle">✔</div>
+                <div class="feature-text">Despertar o interesse pelas palavras e pelos sons</div>
+            </div>
+
+            <div class="feature-card-item">
+                <div class="feature-icon-circle">✔</div>
+                <div class="feature-text">Tornar o processo de alfabetização leve, divertido e eficaz!</div>
+            </div>
+
+        </div>
+
+        <p class="text-center" style="margin-top: 30px; margin-bottom: 0;">Tudo isso com apenas alguns minutos por dia — direto de casa, no ritmo natural da criança.</p>
+    </section>
+
+    <!-- 7. Por que funciona -->
+    <section style="padding: 20px;">
+        <h2 class="text-center">Por que as atividades de Grafismo Fonético funcionam?</h2>
+        <div class="color-divider"></div>
+
+        <div class="card-blue">
+            <img src="https://i.imgur.com/ZIobZHs.png" class="responsive" style="border-radius: 12px; margin-bottom: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);" loading="lazy" decoding="async">
+            
+            <p style="color: #2D4883; font-weight: 800; font-size: 20px; line-height: 1.3;">
+                Antes de aprender a ler, o cérebro da criança precisa reconhecer padrões, sons e movimentos.
+            </p>
+            
+            <p style="color: #000;">
+                As atividades de grafismo fonético desenvolvem a <strong>consciência fonológica e visual</strong> — habilidades essenciais para que a criança reconheça sílabas, sons e estruturas das palavras de forma natural.
+            </p>
+
+            <p style="color: #000; margin-bottom: 0;">
+                Ao traçar linhas, curvas e padrões fonéticos, ela fortalece as conexões cerebrais responsáveis pela leitura, <strong>acelerando o processo de alfabetização de forma divertida e sem pressão.</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- 8. Lista Verde (NOVO CARD) -->
+    <section style="padding: 20px;">
+        
+        <div class="green-card-container">
+            <!-- Imagem de Topo -->
+            <img src="https://i.imgur.com/f2R6VVv.png" alt="Criança Lendo Feliz" class="responsive" style="border-radius: 12px; margin-bottom: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);" loading="lazy" decoding="async">
+
+            <!-- Título com cor #2D8336 -->
+            <h3 class="text-center" style="color: #2D8336; font-size: 22px; margin-bottom: 25px;">E em poucos dias você vai notar a diferença na leitura do seu filho:</h3>
+            
+            <!-- Itens em Cards Brancos Elegantes -->
+            <div class="green-list-card">
+                <span style="font-size: 18px;">✅</span>
+                <span>Vai reconhecer sílabas e sons com mais facilidade</span>
+            </div>
+            
+            <div class="green-list-card">
+                <span style="font-size: 18px;">✅</span>
+                <span>Vai se sentir mais confiante ao tentar ler palavras novas</span>
+            </div>
+            
+            <div class="green-list-card">
+                <span style="font-size: 18px;">✅</span>
+                <span>Vai mostrar mais interesse por livros e história</span>
+            </div>
+            
+            <div class="green-list-card">
+                <span style="font-size: 18px;">✅</span>
+                <span>Vai aprender no ritmo dele, sem frustração ou comparação</span>
+            </div>
+            
+            <div class="green-list-card">
+                <span style="font-size: 18px;">✅</span>
+                <span>E o melhor: vai começar a gostar do momento de leitura em casa</span>
+            </div>
+
+            <!-- Parágrafo Ajustado -->
+            <p class="text-center" style="font-size: 18px; color: #333; margin-top: 30px; line-height: 1.5;">
+                Com o <strong>Kit de Grafismo Fonético, seu filho</strong> desenvolve o cérebro para aprender a ler com leveza, no tempo dele — e com resultados visíveis em poucos dias.
+            </p>
+            
+            <!-- Frase Final Elegante -->
+            <div class="text-center">
+                <span class="elegant-cta-text">Comece a jornada de aprendizado do seu filho hoje ✨</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CTA Intermediário -->
+    <section style="padding: 20px; text-align: center;">
+        <div class="mini-ribbon">✏️ Método Exclusivo</div>
+        <a href="https://ggcheckout.com.br/checkout/v2/4k5Ft7HA4PfDROFpaRwj" class="btn-cta">Quero meu filho(a) Lendo!</a>
+    </section>
+
+    <!-- 10. O que vai aprender (NOVO DESIGN) -->
+    <section class="section-learn">
+        <div class="learn-title-container">
+            <h2 class="learn-title">📚O Que Seu Filho<br>Vai Aprender📚</h2>
+        </div>
+
+        <div class="learn-card-print">
+            <img src="https://i.imgur.com/BT8LxLl.png" class="learn-card-img" alt="Ícone Sons" loading="lazy" decoding="async">
+            <h4 class="learn-card-h4">Reconhecimento de Sons e Letras</h4>
+            <p class="learn-card-p">Cada som é associado a <strong>fortalecendo as conexões cerebrais</strong> de forma sólida e duradoura.</p>
+        </div>
+
+        <div class="learn-card-print">
+            <img src="https://i.imgur.com/UwRu4Wd.png" class="learn-card-img" alt="Ícone Palavras" loading="lazy" decoding="async">
+            <h4 class="learn-card-h4">Formação de Palavras</h4>
+            <p class="learn-card-p"><strong>Atividades dinâmicas</strong> que transformam a <strong>construção de palavras</strong> em uma experiência divertida e intuitiva.</p>
+        </div>
+
+        <div class="learn-card-print">
+            <img src="https://i.imgur.com/XkeMFzG.png" class="learn-card-img" alt="Ícone Leitura" loading="lazy" decoding="async">
+            <h4 class="learn-card-h4">Compreensão e Leitura Fluente</h4>
+            <p class="learn-card-p">Exercícios práticos que <strong>aprimoram a compreensão</strong> do que está sendo lido, ajudando seu filho a <strong>ganhar fluência e confiança.</strong></p>
+        </div>
+
+        <div class="learn-card-print">
+            <img src="https://i.imgur.com/wxslQHP.png" class="learn-card-img" alt="Ícone Guia" loading="lazy" decoding="async">
+            <h4 class="learn-card-h4">Guia Passo a Passo com Ilustrações</h4>
+            <p class="learn-card-p"><strong>Instruções visuais</strong> e detalhadas para que <strong>cada fase do aprendizado</strong> seja clara e <strong>tranquila, sem complicações.</strong></p>
+        </div>
+    </section>
+
+    <!-- 11. Vídeo -->
+    <section style="padding: 20px; text-align: center; background-color: #FFFADF;">
+        <h3 class="video-title-elegant">Veja como é facil ensinar seu filho(a) a ler com o Grafismo Fonético...</h3>
+        <p>Aperte o play👇</p>
+        <div class="video-wrapper">
+            <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/ssijo0n5gl.js" async type="module"></script><style>wistia-player[media-id='ssijo0n5gl']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/ssijo0n5gl/swatch'); display: block; filter: blur(5px); padding-top:177.22%; }</style> <wistia-player media-id="ssijo0n5gl" aspect="0.5642633228840125"></wistia-player>
+        </div>
+    </section>
+
+    <!-- 12. Benefícios Vida -->
+    <section style="padding: 20px;">
+        <div class="text-center" style="margin-bottom: 30px;">
+            <h3 style="line-height: 1.4;">
+                <span style="display: block; font-size: 18px; color: #000; font-weight: 800; margin-bottom: 8px;">Praticando apenas 10 minutos por dia,</span>
+                <span class="marker-pen">Seu filho colherá estes<br>benefícios para o resto da vida:</span>
+            </h3>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-number">1</div>
+            <h4>Crianças em fase de alfabetização:</h4>
+            <p>Ideal para crianças que estão dando os primeiros passos na leitura, o método oferece uma abordagem estruturada e intuitiva, ajudando a desenvolver uma base sólida e segura.</p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-number">2</div>
+            <h4>Pais e educadores que buscam alternativas aos métodos tradicionais:</h4>
+            <p>Se você procura uma forma de ensino mais personalizada, que respeita o ritmo individual de cada criança, esse método é uma excelente escolha, fugindo da memorização forçada e trazendo aprendizado natural e eficaz.</p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-number">3</div>
+            <h4>Crianças com dificuldade de leitura:</h4>
+            <p>Para crianças que enfrentam desafios na leitura e compreensão, o Método de Grafismo Fonético oferece um suporte extra com atividades lúdicas que facilitam o entendimento dos sons e das palavras, fortalecendo a confiança e o gosto pelo aprendizado.</p>
+        </div>
+
+        <div class="benefit-card">
+            <div class="benefit-number">4</div>
+            <h4>Escolas e instituições que valorizam inovação no ensino:</h4>
+            <p>Perfeito para escolas que buscam métodos comprovados, o grafismo fonético, inspirado no método americano, traz uma abordagem moderna que gera resultados reais e duradouros na formação dos alunos.</p>
+        </div>
+    </section>
+
+    <!-- 13. Depoimentos -->
+    <section style="padding: 20px; background-color: #f7f7f7;">
+        <h3 class="title-elegant-gradient">Veja o que Pais e educadores dizem sobre o Kit de Grafismo Fonético</h3>
+
+        <!-- Comentário 1 -->
+        <div class="testimonial-card">
+            <div class="fb-header">
+                <div class="fb-avatar" style="background-image: url('https://i.imgur.com/tkvVnWP.jpeg'); background-size: cover;"></div>
+                <div>
+                    <span class="fb-name">André Azevedo</span>
+                    <span class="fb-meta">Perfil</span>
+                </div>
+            </div>
+            <p>Meus pequenos estão conseguindo ter uma evolução significativa graças ao Grafismo Fonético. Quem comprar outro produto, é porque não gosta de dinheiro.</p>
+            <div class="fb-actions">
+                <span>Curtir</span> <span>Responder</span>
+                <div class="fb-reactions">😍❤️ 7 • 28 min</div>
+            </div>
+        </div>
+
+        <!-- Comentário 2 -->
+        <div class="testimonial-card">
+            <div class="fb-header">
+                <div class="fb-avatar" style="background-image: url('https://i.imgur.com/eTDG6Ca.jpeg'); background-size: cover;"></div>
+                <div>
+                    <span class="fb-name">Ana Oliveira</span>
+                    <span class="fb-meta">Perfil</span>
+                </div>
+            </div>
+            <p>Minha filha começou a formar palavras com apenas duas semanas usando o kit. É incrível como ela evoluiu em tão pouco tempo!</p>
+            <div class="fb-actions">
+                <span>Curtir</span> <span>Responder</span>
+                <div class="fb-reactions">👍❤️ 3 • 55 min</div>
+            </div>
+        </div>
+
+        <!-- Comentário 3 -->
+        <div class="testimonial-card">
+            <div class="fb-header">
+                <div class="fb-avatar" style="background-image: url('https://i.imgur.com/xcjS6S5.jpeg'); background-size: cover;"></div>
+                <div>
+                    <span class="fb-name">Marisa Correia</span>
+                    <span class="fb-meta">Perfil</span>
+                </div>
+            </div>
+            <p>Acreditem em mim, essa é a melhor compra que vocês vão fazer este ano. Não percam a chance!</p>
+            <div class="fb-actions">
+                <span>Curtir</span> <span>Responder</span>
+                <div class="fb-reactions">😍 13 • 1 h</div>
+            </div>
+        </div>
+
+         <!-- Comentário 4 -->
+         <div class="testimonial-card">
+            <div class="fb-header">
+                <div class="fb-avatar" style="background-image: url('https://i.imgur.com/obgjoUw.jpeg'); background-size: cover;"></div>
+                <div>
+                    <span class="fb-name">Camila Silva</span>
+                    <span class="fb-meta">Perfil</span>
+                </div>
+            </div>
+            <p>É incrível como algo tão simples pode fazer tanta diferença! Estou muito satisfeito com a minha compra 👌</p>
+            <div class="fb-actions">
+                <span>Curtir</span> <span>Responder</span>
+                <div class="fb-reactions">👍 8 • 2 h</div>
+            </div>
+        </div>
+
+         <!-- Comentário 5 -->
+         <div class="testimonial-card">
+            <div class="fb-header">
+                <div class="fb-avatar" style="background-image: url('https://i.imgur.com/NmxcR4M.jpeg'); background-size: cover;"></div>
+                <div>
+                    <span class="fb-name">Breno Souza</span>
+                    <span class="fb-meta">Perfil</span>
+                </div>
+            </div>
+            <p>O método é simples de seguir, mesmo para nós que somos pais sem experiência em ensino. É muito gratificante ver nosso filho lendo suas primeiras palavras!</p>
+            <div class="fb-actions">
+                <span>Curtir</span> <span>Responder</span>
+                <div class="fb-reactions">❤️😍 20 • 5 h</div>
+            </div>
+        </div>
+        
+        <p class="text-center" style="color: #90949c; font-size: 12px; margin-top: 10px;">Plug-in social do Facebook</p>
+    </section>
+
+    <!-- Seção Quem Sou Eu -->
+    <section class="section-about">
+        <div class="about-card">
+            <div class="about-image-container">
+                <!-- Placeholder 1080x1080 -->
+                <img src="https://i.imgur.com/wWribOu.png" alt="Professora Márcia Andrade" class="about-image" loading="lazy" decoding="async">
+            </div>
+            <div class="about-content">
+                <h2 class="about-title">Quem sou eu?</h2>
+                <p class="about-text">
+                    A <strong>Professora Márcia Andrade</strong> é especialista em Educação Infantil e Alfabetização, com mais de 15 anos de experiência dedicados ao desenvolvimento da leitura nos primeiros anos escolares.
+                </p>
+                <p class="about-text">
+                    Com formação complementar em metodologias fonológicas e práticas de alfabetização inspiradas em abordagens internacionais, Márcia aprofundou seus estudos em técnicas baseadas na consciência fonêmica e na construção estruturada da leitura.
+                </p>
+                <p class="about-text">
+                    Ao longo da sua trajetória, atuou na formação pedagógica de educadores, orientando professores na aplicação prática de estratégias que fortalecem a base da alfabetização de forma estruturada, leve e eficaz.
+                </p>
+                <p class="about-text">
+                    Reconhecida por sua didática clara e abordagem acessível, Márcia acredita que toda criança é capaz de aprender a ler quando recebe o estímulo correto, no momento certo.
+                </p>
+                <p class="about-text">
+                    Além da atuação profissional, é casada e mãe de três filhos — experiência que reforça sua visão prática e sensível sobre o processo de aprendizagem dentro e fora da sala de aula.
+                </p>
+                <p class="about-text">
+                    Hoje, seu trabalho é focado em ajudar pais e educadores a tornarem a alfabetização mais natural, segura e confiante para as crianças.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. Seção Marrom (What you get) - REDESIGNED -->
+    <section class="section-brown-gold">
+        <h2 class="brown-gold-title">VEJA TUDO QUE<br>VOCÊ VAI RECEBER<br>NO KIT DE<br>ATIVIDADES</h2>
+        
+        <!-- Carrossel -->
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <img src="https://i.imgur.com/bm9yTVs.png" alt="Slide 1" loading="lazy" decoding="async">
+                <img src="https://i.imgur.com/67j3GbN.png" alt="Slide 2" loading="lazy" decoding="async">
+                <img src="https://i.imgur.com/CuxoTgj.png" alt="Slide 3" loading="lazy" decoding="async">
+                <img src="https://i.imgur.com/Pzpbejp.png" alt="Slide 4" loading="lazy" decoding="async">
+                <img src="https://i.imgur.com/5PsE0EX.png" alt="Slide 5" loading="lazy" decoding="async">
+                <img src="https://i.imgur.com/iJlQfr7.png" alt="Slide 6" loading="lazy" decoding="async">
+                <img src="https://i.imgur.com/fNTeNPc.png" alt="Slide 7" loading="lazy" decoding="async">
+                <img src="https://i.imgur.com/HAd4Gl6.png" alt="Slide 8" loading="lazy" decoding="async">
+                <img src="https://i.imgur.com/fiHRo0V.png" alt="Slide 9" loading="lazy" decoding="async">
+                <img src="https://i.imgur.com/gTlnFRe.png" alt="Slide 10" loading="lazy" decoding="async">
+            </div>
+        </div>
+
+        <!-- Botões Coloridos (Stack) -->
+        <div class="kit-btn-stack">
+            <div class="kit-btn-item kb-green">+ DE 100 ATIVIDADES DE GRAFISMO FONÉTICO</div>
+            <div class="kit-btn-item kb-orange">ATIVIDADES NÍVEL 01 : PALAVRAS COM 02 SÍLABAS</div>
+            <div class="kit-btn-item kb-blue">ATIVIDADES NÍVEL 02 : PALAVRAS COM 03 SÍLABAS</div>
+            <div class="kit-btn-item kb-red">ATIVIDADES NÍVEL 03 : PALAVRAS COM 04 SÍLABAS</div>
+            <div class="kit-btn-item kb-yellow">ATIVIDADES GRAFISMO NA LETRA CURSIVA E BASTÃO</div>
+        </div>
+    </section>
+
+    <!-- 15. Simples de usar -->
+    <section style="padding: 20px; background-color: #FFF7CF;">
+        <h2 class="text-center">Muito simples de começar a utilizar!</h2>
+
+        <div class="step-card">
+            <img src="https://i.imgur.com/gKMiGKK.png" class="step-img" alt="Email" loading="lazy" decoding="async">
+            <h4>CHEGA NO E-MAIL</h4>
+            <p>Após a compra você recebe no e-mail o acesso a plataforma com arquivos em formato PDF.</p>
+        </div>
+
+        <div class="step-card">
+            <img src="https://i.imgur.com/rnircNl.png" class="step-img" alt="Imprimir" loading="lazy" decoding="async">
+            <h4>VOCÊ IMPRIME</h4>
+            <p>Você pode imprimir quando quiser, pois o acesso é VITALÍCIO e quantas vezes desejar.</p>
+        </div>
+
+        <div class="step-card">
+            <img src="https://i.imgur.com/X9i5q8S.png" class="step-img" alt="Crianças" loading="lazy" decoding="async">
+            <h4>OS PEQUENOS AMAM</h4>
+            <p>Temos uma ótima notícia pra você, MÃOS À OBRA! Importante que sempre auxilie seu pequeno nas atividades.</p>
+        </div>
+    </section>
+
+    <!-- 16. Bônus (REDESIGNED) -->
+    <div class="bonus-ribbon-header">
+        e ainda não<br>acabou...
+    </div>
+    
+    <section class="bonus-section-body">
+        <div class="bonus-title-block">
+            GARANTINDO SEU<br>ACESSO HOJE<br>
+            <span class="highlight-bonus-yellow">VOCÊ LEVA 6 SUPER<br>BÔNUS 🎁</span>
+        </div>
+
+        <div class="bonus-grid-new">
+            <!-- Bônus 1 -->
+            <div class="bonus-card-new">
+                <img src="https://i.imgur.com/IyiNyVF.png" class="bonus-card-img-new" alt="Caderno Alfabeto" loading="lazy" decoding="async">
+                <h4 class="bonus-card-title">Caderno Alfabeto<br>com Imagem</h4>
+                <p class="bonus-card-desc">Apresenta cada letra do alfabeto com imagens associadas, ajudando na familiarização das crianças com as letras de forma visual e divertida.</p>
+                <span class="bonus-price-strike">De R$ 37</span>
+                <span class="bonus-tag-free">HOJE: GRÁTIS</span>
+            </div>
+
+            <!-- Bônus 2 -->
+            <div class="bonus-card-new">
+                <img src="https://i.imgur.com/lpXvX7c.png" class="bonus-card-img-new" alt="Quebra Cabeça" loading="lazy" decoding="async">
+                <h4 class="bonus-card-title">Caderno Quebra<br>Cabeça Alfabeto</h4>
+                <p class="bonus-card-desc">Atividades de quebra-cabeça com letras do alfabeto para fixação divertida e interativa.</p>
+                <span class="bonus-price-strike">De R$ 47</span>
+                <span class="bonus-tag-free">HOJE: GRÁTIS</span>
+            </div>
+
+            <!-- Bônus 3 -->
+            <div class="bonus-card-new">
+                <img src="https://i.imgur.com/CQPoMHi.png" class="bonus-card-img-new" alt="Formando Palavras" loading="lazy" decoding="async">
+                <h4 class="bonus-card-title">Caderno Formando<br>Palavras</h4>
+                <p class="bonus-card-desc">Exercícios de formação de palavras que incentivam a leitura e a escrita desde cedo.</p>
+                <span class="bonus-price-strike">De R$ 57</span>
+                <span class="bonus-tag-free">HOJE: GRÁTIS</span>
+            </div>
+
+            <!-- Bônus 4 -->
+            <div class="bonus-card-new">
+                <img src="https://i.imgur.com/kXWF9y0.png" class="bonus-card-img-new" alt="Relógio" loading="lazy" decoding="async">
+                <h4 class="bonus-card-title">Caderno Alfabeto<br>com Relógio</h4>
+                <p class="bonus-card-desc">Ensina as letras junto a noções de tempo, combinando aprendizado alfabético e temporal.</p>
+                <span class="bonus-price-strike">De R$ 39</span>
+                <span class="bonus-tag-free">HOJE: GRÁTIS</span>
+            </div>
+
+            <!-- Bônus 5 -->
+            <div class="bonus-card-new">
+                <img src="https://i.imgur.com/0mEVNTm.png" class="bonus-card-img-new" alt="Traçado" loading="lazy" decoding="async">
+                <h4 class="bonus-card-title">Caderno Alfabeto<br>Traçado</h4>
+                <p class="bonus-card-desc">Perfeito para praticar a escrita e coordenação motora fina através do traçado das letras.</p>
+                <span class="bonus-price-strike">De R$ 27</span>
+                <span class="bonus-tag-free">HOJE: GRÁTIS</span>
+            </div>
+
+            <!-- Bônus 6 -->
+            <div class="bonus-card-new">
+                <img src="https://i.imgur.com/K7KNi1A.png" class="bonus-card-img-new" alt="Carinhas" loading="lazy" decoding="async">
+                <h4 class="bonus-card-title">Caderno Alfabeto<br>com Carinhas</h4>
+                <p class="bonus-card-desc">Associa cada letra a carinhas expressivas, tornando o aprendizado emocional e divertido.</p>
+                <span class="bonus-price-strike">De R$ 49</span>
+                <span class="bonus-tag-free">HOJE: GRÁTIS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 17. Recap + Preço (NOVO CARD DESIGN ELEGANTÍSSIMO) -->
+    <section class="section-recap">
+        <div class="recap-headline">
+            Recapitulando tudo o que você vai receber junto com o<br>
+            <span class="marker-strong">Kit Atividades Grafismo Fonético</span>
+        </div>
+
+        <div class="offer-card">
+            <div class="offer-card-header">
+                OFERTA EXCLUSIVA POR TEMPO LIMITADO
+            </div>
+            
+            <div class="offer-list-container">
+                <!-- Item 1 -->
+                <div class="offer-item">
+                    <div class="icon-check-3d">✔</div>
+                    <div>
+                        Atividades de Grafismo Fonético Nivel 1, 2 e 3<br>
+                        <span class="price-strike-red">De R$ 197</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="offer-item">
+                    <div class="icon-check-3d">✔</div>
+                    <div>
+                        Bônus 01: Caderno Alfabeto com Imagem<br>
+                        <span class="price-strike-red">De R$ 37</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="offer-item">
+                    <div class="icon-check-3d">✔</div>
+                    <div>
+                        Bônus 02: Caderno Quebra-Cabeça Alfabeto<br>
+                        <span class="price-strike-red">De R$ 47</span>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="offer-item">
+                    <div class="icon-check-3d">✔</div>
+                    <div>
+                        Bônus 03: Caderno Formando Palavras<br>
+                        <span class="price-strike-red">De R$ 57</span>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="offer-item">
+                    <div class="icon-check-3d">✔</div>
+                    <div>
+                        Bônus 04: Caderno Alfabeto com Relógio<br>
+                        <span class="price-strike-red">De R$ 39</span>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="offer-item">
+                    <div class="icon-check-3d">✔</div>
+                    <div>
+                        Bônus 05: Caderno Alfabeto Traçado<br>
+                        <span class="price-strike-red">De R$ 27</span>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="offer-item">
+                    <div class="icon-check-3d">✔</div>
+                    <div>
+                        Bônus 06: Caderno Alfabeto com Carinhas<br>
+                        <span class="price-strike-red">De R$ 49</span>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="offer-item">
+                    <div class="icon-check-3d">✔</div>
+                    <div style="font-weight: 700; color: #333;">
+                        🙎 Suporte Profissional
+                    </div>
+                </div>
+
+                <!-- Item 9 -->
+                <div class="offer-item">
+                    <div class="icon-check-3d">✔</div>
+                    <div style="font-weight: 700; color: #333;">
+                        💰 Garantia Incondicional
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCO DE PREÇO DENTRO DO CARD -->
+            <div class="price-block-container">
+                <div class="price-total-strike">
+                    No total tudo deveria custar <span class="price-strike-red">R$ 453,00</span>
+                </div>
+                
+                <div class="price-access-deal">
+                    Mas hoje você vai ter acesso completo por
+                </div>
+
+                <div class="price-final-row">
+                    <div class="price-from">R$ 97,90</div>
+                    <div class="price-now-huge">R$ 19,90</div>
+                    <div class="price-installments-text">ou 2x de R$ 11,41</div>
+                </div>
+
+                <div class="elegant-text-simple">
+                    ACESSO VITALÍCIO | ACESSO IMEDIATO
+                </div>
+                
+                <a href="https://ggcheckout.com.br/checkout/v2/4k5Ft7HA4PfDROFpaRwj" class="btn-cta" style="margin-top: 0;">QUERO GARANTIR O MEU KIT AGORA!</a>
+
+                <!-- Imagem de Segurança -->
+                <div class="security-img-container">
+                    <img src="https://i.imgur.com/DxEV8vi.png" alt="Compra Segura e Satisfação Garantida" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 18. Garantia -->
+    <section style="padding: 20px; background-color: #fff;">
+        <div class="warranty-card-premium">
+            <!-- Ícone de Cadeado 3D "16D" SVG -->
+            <div class="lock-icon-container">
+                <svg width="100" height="100" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="lockBodyGrad" x1="10" y1="40" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#FFD700" />
+                            <stop offset="40%" stop-color="#FDB931" />
+                            <stop offset="100%" stop-color="#9E7F28" />
+                        </linearGradient>
+                        <linearGradient id="shackleGrad" x1="30" y1="0" x2="90" y2="60" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#E8E8E8" />
+                            <stop offset="100%" stop-color="#888888" />
+                        </linearGradient>
+                         <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <!-- Shackle (Silver/Chrome look) -->
+                    <path d="M35 45 V 25 C 35 10, 85 10, 85 25 V 45" stroke="url(#shackleGrad)" stroke-width="12" stroke-linecap="round" fill="none" />
+                    
+                    <!-- Body -->
+                    <rect x="20" y="45" width="80" height="65" rx="15" fill="url(#lockBodyGrad)" filter="url(#glow)" />
+                    
+                    <!-- Reflection/Shine on Body -->
+                    <path d="M25 50 H 95 C 98 50 100 52 100 55 V 65 C 100 65 60 80 20 65 V 55 C 20 52 22 50 25 50 Z" fill="white" fill-opacity="0.3" />
+        
+                    <!-- Checkmark Circle -->
+                    <circle cx="60" cy="77.5" r="18" fill="#27C948" stroke="white" stroke-width="2"/>
+                    
+                    <!-- Checkmark -->
+                    <path d="M52 78 L 57 83 L 68 72" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <h3 class="warranty-headline">Garantia de Satisfação Total</h3>
+            
+            <p class="warranty-text">
+                Estamos tão certos de que o Kit de Grafismo Fonético vai ajudar seu filho a ler com mais facilidade, que oferecemos uma <strong>garantia incondicional de 15 dias.</strong>
+            </p>
+            <p class="warranty-text">
+                Se, por qualquer motivo, você sentir que o material não foi útil ou que seu filho não se adaptou, é só nos avisar dentro desse prazo e devolveremos 100% do seu investimento — sem perguntas ou burocracia.
+            </p>
+            <p class="text-center font-bold" style="color: #333; margin-top: 20px;">
+                A sua tranquilidade vem em primeiro lugar. Você compra hoje, testa com calma, e só continua se realmente perceber resultados.
+            </p>
+        </div>
+    </section>
+
+    <!-- 19. FAQ -->
+    <section style="padding: 20px;">
+        <h2 class="text-center">Perguntas Frequentes</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">Quais são as Formas de Pagamento?</div>
+            <div class="faq-answer">Você pode realizar o pagamento via PIX ou Cartão de Crédito. Ambas as opções garantem a liberação imediata do seu acesso ao material.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Como vou ter acesso aos produtos?</div>
+            <div class="faq-answer">O acesso é enviado automaticamente para o e-mail que você cadastrar na hora da compra. Assim que o pagamento for confirmado, você receberá um link exclusivo para nossa área de membros, onde poderá baixar todos os arquivos em PDF com total segurança e praticidade.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Tenho que pagar todo mês?</div>
+            <div class="faq-answer">Não! O pagamento é único e você tem acesso vitalício ao material.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Posso tirar dúvidas?</div>
+            <div class="faq-answer">Sim! Temos uma equipe de suporte dedicada para ajudar você em qualquer dúvida sobre o material ou o acesso.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Para quem é indicado o material?</div>
+            <div class="faq-answer">O kit é indicado para crianças de 2 a 12 anos em fase de alfabetização, reforço escolar ou com dificuldades de aprendizagem.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Quais são os benefícios Grafismos Fonéticos?</div>
+            <div class="faq-answer">Desenvolve a coordenação motora, consciência fonológica, raciocínio lógico e acelera a alfabetização de forma lúdica.</div>
+        </div>
+    </section>
+
+    <!-- 20. Footer -->
+    <footer>
+        <p>
+            <a href="#">Instagram</a> | <a href="#">Facebook</a>
+        </p>
+        <p style="margin-top: 10px;">Copyright ©2026. Todos os direitos reservados – Editora VTL</p>
+    </footer>
+
+</div>
+
+<script>
+
+
+    // 2. Lógica do Acordeão (FAQ)
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Fecha todos
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+            });
+
+            // Abre o clicado se não estava aberto
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // 3. Carousel Logic (Auto-play slow)
+    const track = document.querySelector('.carousel-track');
+    if (track) {
+        let scrollAmount = 0;
+        const speed = 2; // Speed of auto scroll
+        let isHovered = false;
+
+        // Auto scroll interval
+        setInterval(() => {
+            if (!isHovered) {
+                // Determine width of one slide
+                const slideWidth = track.firstElementChild ? track.firstElementChild.clientWidth + 10 : 300;
+                
+                // Scroll slightly
+                if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 5) {
+                    track.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back
+                } else {
+                    track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+                }
+            }
+        }, 3000); // Every 3 seconds slide
+
+        // Pause on interaction
+        track.addEventListener('touchstart', () => { isHovered = true; });
+        track.addEventListener('touchend', () => { 
+            setTimeout(() => isHovered = false, 2000); 
+        });
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var buttons = document.querySelectorAll('.btn-cta');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function() {
+                if (typeof fbq === 'function') {
+                    fbq('track', 'InitiateCheckout');
+                }
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
