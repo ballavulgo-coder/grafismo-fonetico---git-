@@ -122,9 +122,8 @@
 
         .marker-pen {
             background-color: #FFF7CF;
-            color: #8F6E1A;
-            padding: 2px 6px;
-            border-radius: 4px;
+            padding: 4px 6px;
+            border-radius: 6px;
             display: inline;
             -webkit-box-decoration-break: clone;
             box-decoration-break: clone;
@@ -358,10 +357,11 @@
             text-align: center;
         }
         .section-hero h1 {
-            font-size: 26px;
+            font-size: 22px;
             color: var(--text-dark);
             margin-top: 15px;
             font-weight: 500; /* Leve por padrão no h1 */
+            line-height: 1.4; /* Espaçamento normal */
         }
         .section-hero .subheadline {
             font-size: 16px;
@@ -393,6 +393,7 @@
             margin-bottom: 30px;
             text-align: center;
             font-weight: 800;
+            line-height: 1.8; /* Aumentado para não cortar o marca-texto */
         }
 
         /* Nova Classe de Fundo */
@@ -1244,8 +1245,7 @@
         <img src="https://i.imgur.com/Drz3fcX.png" alt="Mockup Kit Grafismo" class="responsive" style="margin-bottom: 20px;" fetchpriority="high">
         
         <h1>
-            Descubra a <span class="marker-pen">técnica americana que ensina as crianças a ler</span> até 
-            <span style="font-weight: 800;">5 vezes mais rápido</span>, sem pressão!
+            Descubra a <span class="marker-pen">técnica americana</span> que ajuda crianças com TEA, TDAH e dislexia a lerem até 3x mais rápido — sem pressão!
         </h1>
         
         <p class="subheadline">Com apenas <span class="highlight-green-pill">10 minutos</span> por dia.</p>
@@ -1254,17 +1254,17 @@
         <div style="margin: 20px 0;">
             <div class="hero-benefit-card">
                 <div class="hero-check-icon">✔</div>
-                <span class="hero-benefit-text">Ideal para crianças de 2 a 12 anos, no ritmo natural de cada uma</span>
+                <span class="hero-benefit-text">Ideal para crianças de 2 a 13 anos — respeitando o ritmo e as particularidades de cada uma</span>
             </div>
 
             <div class="hero-benefit-card">
                 <div class="hero-check-icon">✔</div>
-                <span class="hero-benefit-text">Mesmo que ainda não reconheça letras ou sons</span>
+                <span class="hero-benefit-text">Mesmo que ainda não reconheça letras ou sons,  e tenha dificuldade de foco</span>
             </div>
 
             <div class="hero-benefit-card">
                 <div class="hero-check-icon">✔</div>
-                <span class="hero-benefit-text">Funciona também com crianças com TDAH, Autismo ou dificuldades de foco</span>
+                <span class="hero-benefit-text">Criado especialmente para crianças com TEA, TDAH e dislexia</span>
             </div>
         </div>
 
@@ -1273,7 +1273,7 @@
 
     <!-- 2. Introdução -->
     <section class="section-intro">
-        <p>Com o <strong>Kit de Grafismo Fonético</strong>, baseado no <strong>método americano</strong> de alfabetização, seu filho aprende a ler até <strong>5x mais rápido</strong> — de forma divertida, simples e eficaz, direto de casa!</p>
+        <p>Com o <strong>Kit de Grafismo Fonético</strong> - desenvolvido especialmente para crianças com <strong>TEA, TDAH e dislexia</strong> - seu filho aprende a ler até <strong>3x mais rápido</strong>, com leveza, diversão e sem pressão e direto de casa!</p>
         
         <!-- Seta Tracejada SVG -->
         <svg class="dashed-arrow-svg" viewBox="0 0 24 60">
@@ -1284,25 +1284,36 @@
 
     <!-- 3. Dor (Pain) -->
     <section class="section-pain">
-        <h3 class="pain-title">Muitos pais acham que <span class="marker-pen">“cada criança tem seu tempo pra ler”</span>. Até que…</h3>
+        <h3 class="pain-title">Muitos pais acreditam que <span class="marker-pen">“cada criança tem seu tempo pra ler”</span>.</h3>
+        <p style="text-align: center; margin-bottom: 25px; font-weight: 600; color: var(--text-dark);">Mas quando seu filho tem TEA, TDAH ou dislexia… a realidade pode ser diferente.</p>
         
         <div class="pain-card-elegant">
             <div class="pain-icon-wrapper">👎🏻</div>
-            <div class="pain-text-elegant">As tarefas de leitura viram um sofrimento</div>
+            <div class="pain-text-elegant">As tarefas de leitura viram tensão e sofrimento</div>
         </div>
         
         <div class="pain-card-elegant">
             <div class="pain-icon-wrapper">👎🏻</div>
-            <div class="pain-text-elegant">As notas baixas</div>
+            <div class="pain-text-elegant">Ele se distrai em segundos ou trava nas sílabas</div>
         </div>
 
         <div class="pain-card-elegant">
             <div class="pain-icon-wrapper">👎🏻</div>
-            <div class="pain-text-elegant">Ela se sente “menos inteligente” do que os coleguinhas</div>
+            <div class="pain-text-elegant">A professora diz que ele “não acompanha”</div>
+        </div>
+
+        <div class="pain-card-elegant">
+            <div class="pain-icon-wrapper">👎🏻</div>
+            <div class="pain-text-elegant">Você começa a sentir medo dele ficar para trás</div>
+        </div>
+
+        <div class="pain-card-elegant">
+            <div class="pain-icon-wrapper">👎🏻</div>
+            <div class="pain-text-elegant">O receio de que seja rotulado como “lento” ou “menos inteligente” pelos colegas</div>
         </div>
         
         <p class="text-center font-bold" style="margin-top: 30px; font-size: 18px; color: #000;">
-            <span class="marker-pen">E o pior:</span> Começa a achar que não é capaz, sem entender o porquê..
+            <span class="marker-pen">E o pior:</span> ele pode começar a acreditar que realmente não é capaz
         </p>
     </section>
 
@@ -1314,13 +1325,13 @@
         <!-- Card Elegante de Alerta -->
         <div class="alert-card-pro">
             <p style="font-size: 16px; line-height: 1.5; text-align: left;">
-                <span style="font-size: 18px; font-weight: 800; display: block; margin-bottom: 10px;">Entenda o que realmente <span class="marker-pen-alert">atrasa a leitura do seu filho...</span></span>
-                falta de estímulo fonético na fase certa, o que pode tornar o processo de alfabetização mais lento, frustrante e confuso — tanto para a criança quanto para você.
+                <span style="font-size: 18px; font-weight: 800; display: block; margin-bottom: 10px;">⚠️ Entenda o que realmente atrasa a leitura em crianças com TEA, TDAH e dislexia…</span>
+                A falta de estímulo fonético estruturado – algo essencial para o desenvolvimento da consciência fonológica -- pode tornar o processo de alfabetização mais lento, frustrante e confuso, tanto para a criança quanto para você.
             </p>
         </div>
 
         <!-- Texto Calmante fora do card -->
-        <p class="text-center" style="margin-top: 25px;">Mas calma, você não tem culpa disso... É que ninguém te ensinou como ajudar seu filho a despertar a leitura de forma leve, divertida e no tempo certo.</p>
+        <p class="text-center" style="margin-top: 25px;">Mas calma, você não tem culpa disso... É que ninguém te ensinou como ajudar seu filho neurodivergente a despertar a leitura de forma leve, divertida e no tempo certo.</p>
 
         <!-- Seta Tracejada SVG (Substituindo Emoji) -->
         <svg class="dashed-arrow-svg" viewBox="0 0 24 60">
@@ -1390,7 +1401,7 @@
             </p>
             
             <p style="color: #000;">
-                As atividades de grafismo fonético desenvolvem a <strong>consciência fonológica e visual</strong> — habilidades essenciais para que a criança reconheça sílabas, sons e estruturas das palavras de forma natural.
+                As atividades de grafismo fonético desenvolvem a <strong>consciência fonológica e visual</strong> — habilidades essenciais para que a criança neurodivergente reconheça sílabas, sons e estruturas das palavras de forma natural.
             </p>
 
             <p style="color: #000; margin-bottom: 0;">
@@ -1504,14 +1515,14 @@
 
         <div class="benefit-card">
             <div class="benefit-number">1</div>
-            <h4>Crianças em fase de alfabetização:</h4>
-            <p>Ideal para crianças que estão dando os primeiros passos na leitura, o método oferece uma abordagem estruturada e intuitiva, ajudando a desenvolver uma base sólida e segura.</p>
+            <h4>Crianças com TEA, TDAH ou dislexia na fase de alfabetização</h4>
+            <p>Para crianças que precisam de uma abordagem mais estruturada para aprender, o método de Grafismo Fonético trabalha o som, traço e movimento de forma integrada, facilitando a construção das bases da leitura e escrita.</p>
         </div>
 
         <div class="benefit-card">
             <div class="benefit-number">2</div>
-            <h4>Pais e educadores que buscam alternativas aos métodos tradicionais:</h4>
-            <p>Se você procura uma forma de ensino mais personalizada, que respeita o ritmo individual de cada criança, esse método é uma excelente escolha, fugindo da memorização forçada e trazendo aprendizado natural e eficaz.</p>
+            <h4>Pais que buscam alternativas aos métodos tradicionais</h4>
+            <p>Se você sente que o método convencional não está funcionando para seu filho, o Grafismo Fonético oferece uma abordagem específica para crianças neurodivergentes. Com técnicas visuais e progressivas, respeitando o ritmo individual de aprendizagem.</p>
         </div>
 
         <div class="benefit-card">
@@ -1522,8 +1533,8 @@
 
         <div class="benefit-card">
             <div class="benefit-number">4</div>
-            <h4>Escolas e instituições que valorizam inovação no ensino:</h4>
-            <p>Perfeito para escolas que buscam métodos comprovados, o grafismo fonético, inspirado no método americano, traz uma abordagem moderna que gera resultados reais e duradouros na formação dos alunos.</p>
+            <h4>Educadores que trabalham com alfabetização inclusiva</h4>
+            <p>Perfeito para escolas que buscam métodos comprovados, o grafismo fonético, inspirado no método americano, traz uma abordagem moderna que gera resultados reais e duradouros na formação dos alunos neurodivergentes.</p>
         </div>
     </section>
 
@@ -1540,7 +1551,7 @@
                     <span class="fb-meta">Perfil</span>
                 </div>
             </div>
-            <p>Meus pequenos estão conseguindo ter uma evolução significativa graças ao Grafismo Fonético. Quem comprar outro produto, é porque não gosta de dinheiro.</p>
+            <p>Meus pequenos estão conseguindo ter uma evolução significativa graças ao Grafismo Fonético. Quem não comprar é porque não quer ver seu filho evoluir, ainda mais por estar barato nessa promoção...</p>
             <div class="fb-actions">
                 <span>Curtir</span> <span>Responder</span>
                 <div class="fb-reactions">😍❤️ 7 • 28 min</div>
@@ -1572,7 +1583,7 @@
                     <span class="fb-meta">Perfil</span>
                 </div>
             </div>
-            <p>Acreditem em mim, essa é a melhor compra que vocês vão fazer este ano. Não percam a chance!</p>
+            <p>Estou testando nos meus alunos com autismo e TDAH, o resultado está sendo maravilho, obrigada prof Márcia! Bjjss!</p>
             <div class="fb-actions">
                 <span>Curtir</span> <span>Responder</span>
                 <div class="fb-reactions">😍 13 • 1 h</div>
@@ -1624,22 +1635,19 @@
             <div class="about-content">
                 <h2 class="about-title">Quem sou eu?</h2>
                 <p class="about-text">
-                    A <strong>Professora Márcia Andrade</strong> é especialista em Educação Infantil e Alfabetização, com mais de 15 anos de experiência dedicados ao desenvolvimento da leitura nos primeiros anos escolares.
+                    A Professora Márcia Andrade é especialista em Educação Infantil e Alfabetização, com mais de 16 anos de experiência no desenvolvimento da leitura nos primeiros anos escolares.
                 </p>
                 <p class="about-text">
-                    Com formação complementar em metodologias fonológicas e práticas de alfabetização inspiradas em abordagens internacionais, Márcia aprofundou seus estudos em técnicas baseadas na consciência fonêmica e na construção estruturada da leitura.
+                    Ao longo da sua trajetória, percebeu que muitas crianças enfrentavam dificuldades para aprender a ler — especialmente aquelas com TDAH, TEA ou dislexia. A partir dessa realidade, aprofundou seus estudos em consciência fonológica, metodologias fonêmicas e abordagens estruturadas de alfabetização inspiradas em práticas internacionais.
                 </p>
                 <p class="about-text">
-                    Ao longo da sua trajetória, atuou na formação pedagógica de educadores, orientando professores na aplicação prática de estratégias que fortalecem a base da alfabetização de forma estruturada, leve e eficaz.
+                    Seu trabalho passou a focar em estratégias que ajudam o cérebro da criança a associar sons, letras e movimentos, fortalecendo as bases necessárias para a leitura.
                 </p>
                 <p class="about-text">
-                    Reconhecida por sua didática clara e abordagem acessível, Márcia acredita que toda criança é capaz de aprender a ler quando recebe o estímulo correto, no momento certo.
+                    Além de atuar diretamente com crianças, Márcia também contribuiu na formação de educadores, orientando professores na aplicação de métodos de alfabetização mais estruturados e eficazes.
                 </p>
                 <p class="about-text">
-                    Além da atuação profissional, é casada e mãe de três filhos — experiência que reforça sua visão prática e sensível sobre o processo de aprendizagem dentro e fora da sala de aula.
-                </p>
-                <p class="about-text">
-                    Hoje, seu trabalho é focado em ajudar pais e educadores a tornarem a alfabetização mais natural, segura e confiante para as crianças.
+                    Hoje, dedica seu trabalho a ajudar pais e educadores a tornarem a alfabetização mais segura, estruturada e acessível para crianças com diferentes formas de aprender.
                 </p>
             </div>
         </div>
@@ -1871,8 +1879,8 @@
 
                 <div class="price-final-row">
                     <div class="price-from">R$ 97,90</div>
-                    <div class="price-now-huge">R$ 19,90</div>
-                    <div class="price-installments-text">ou 2x de R$ 11,41</div>
+                    <div class="price-now-huge">R$ 29,90</div>
+                    <div class="price-installments-text">ou 2x de R$ 17,14</div>
                 </div>
 
                 <div class="elegant-text-simple">
@@ -1969,13 +1977,13 @@
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Para quem é indicado o material?</div>
-            <div class="faq-answer">O kit é indicado para crianças de 2 a 12 anos em fase de alfabetização, reforço escolar ou com dificuldades de aprendizagem.</div>
+            <div class="faq-question">❓ Para quem é indicado o material?</div>
+            <div class="faq-answer">O kit foi desenvolvido para crianças de 2 a 12 anos com TEA, TDAH ou dislexia, utilizando uma abordagem estruturada que trabalha a associação entre som, traço e movimento, fortalecendo a base da leitura.</div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Quais são os benefícios Grafismos Fonéticos?</div>
-            <div class="faq-answer">Desenvolve a coordenação motora, consciência fonológica, raciocínio lógico e acelera a alfabetização de forma lúdica.</div>
+            <div class="faq-question">❓ Quais são os benefícios do Grafismo Fonético?</div>
+            <div class="faq-answer">O método estimula consciência fonológica, coordenação motora e reconhecimento de sons, ajudando o cérebro da criança a organizar melhor a leitura de forma mais clara e natural.</div>
         </div>
     </section>
 
